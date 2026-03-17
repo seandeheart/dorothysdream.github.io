@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --cream: #f4efe6;
+  --sage: #4d5b3c;
+  --olive: #74895b;
+  --green: #428537;
+  --dark-green: #336529;
+  --tan: #d8c3a5;
+  --mesquite: #5e4725;
+  --copperwood: #6e5024;
+  --desert-amber: #a27d46;
+  --sandstone: #957649;
+  --driftwood: #826e51;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--mesquite);
+  margin: 0;
+}
+
+header {
+  background: var(--tan);
+  border-bottom: 1px solid var(--sandstone);
+  text-align: center;
+  padding: 35px 20px;
+}
+
+header h2 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--dark-green);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.cart-item {
+  background: white;
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--sandstone);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: 8px 12px;
+  background: var(--sage);
+  color: var(--cream);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: var(--dark-green);
+}
+
+.total {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.checkout-btn {
+  margin-top: 20px;
+  padding: 14px 22px;
+  background: var(--dark-green);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: var(--sage);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Your Cart</h2>
+</header>
+
+<div class="container" id="cart-container"></div>
+
+<div class="container">
+  <div class="total" id="total"></div>
+  <button class="checkout-btn" onclick="alert('Checkout coming soon!')">
+    Proceed to Checkout
+  </button>
+</div>
+
+<script>
+function loadCart() {
+  const container = document.getElementById("cart-container");
+  const totalDiv = document.getElementById("total");
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  container.innerHTML = "";
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Your cart is empty.</p>";
+    totalDiv.innerHTML = "";
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    let itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+
+    div.innerHTML = `
+      <div>
+        <strong>${item.name}</strong><br>
+        $${item.price} × ${item.quantity}
+      </div>
+      <div>
+        $${itemTotal.toFixed(2)}<br>
+        <button onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+
+  totalDiv.innerHTML = "<strong>Total: $" + total.toFixed(2) + "</strong>";
+}
+
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+loadCart();
+</script>
+
+</body>
+</html>
