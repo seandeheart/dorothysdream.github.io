@@ -9,30 +9,28 @@
 
 <style>
 :root {
-  --cream: #f4efe6;
-  --sage: #4d5b3c;
-  --olive: #74895b;
-  --green: #428537;
-  --dark-green: #336529;
-  --tan: #d8c3a5;
-  --mesquite: #5e4725;
-  --copperwood: #6e5024;
-  --desert-amber: #a27d46;
-  --sandstone: #957649;
-  --driftwood: #826e51;
+  --green1: #E8F1EC;
+  --green2: #C9DED0;
+  --green3: #A9CBB4;
+  --green4: #88B897;
+  --green5: #669975;
+  --green6: #557F61;
+  --green7: #44654D;
+  --green8: #334B39;
+  --green9: #223124;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--cream);
+  background: var(#fff);
   color: #222;
 }
 
 /* NAVBAR */
 header {
-  background: var(--tan);
-  border-bottom: 1px solid var(--sandstone);
+  background: var(--green6);
+  border-bottom: 1px solid var(--green9);
   padding: 0 20px;
   height: 70px;
   display: flex;
@@ -48,16 +46,16 @@ header {
 }
 
 .logo-img {
-  width: 150px;
-  height: 150px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .site-title {
   font-weight: 600;
-  color: var(--dark-green);
+  color: var(--green2);
   font-size: 1.4rem;
   letter-spacing: 0.5px;
 }
@@ -68,7 +66,7 @@ header {
 }
 
 .cart span {
-  background: var(--dark-green);
+  background: var(--green7);
   color: white;
   border-radius: 50%;
   padding: 2px 7px;
@@ -90,7 +88,7 @@ header {
 /* Dorothy's Dream */
 .hero-split .hero-tagline {
   font-family: 'Playfair Display', serif;
-  color: var(--desert-amber);
+  color: var(--green8);
   font-weight: 600;
   font-size: 2rem;   /* clearly larger now */
   letter-spacing: 0.5px;
@@ -101,15 +99,16 @@ header {
 .hero-split h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: var(--dark-green);
+  color: var(--green8);
   margin-top: 0;
   margin-bottom: 15px;
+  color: var(--green8);
 }
 
 /* Only apply to paragraph that is NOT the tagline */
 .hero-split p:not(.hero-tagline) {
   font-size: 1.1rem;
-  color: var(--driftwood);
+  color: var(--green8);
 }
 
 /* Image */
@@ -130,24 +129,24 @@ header {
   border: none;
 }
 
-.primary { background: var(--dark-green); color: var(--cream); }
+.primary { background: var(--green7); color: var(--green2); }
 
 /* MESSAGE BAND */
 .message-band {
-  background: var(--sage);
-  color: var(--cream);
+  background: var(--green6);
+  color: var(--green1);
   text-align: center;
   padding: 60px 20px;
 }
 
 .message-band h2 {
   font-family: 'Playfair Display', serif;
-  color: var(--cream);
+  color: var(--green1);
   font-size: 2.4rem;
 }
 
 .message-band p {
-  color: var(--desert-amber);
+  color: var(--green1);
   font-size: 1.2rem;
   margin-top: 10px;
 }
@@ -162,7 +161,7 @@ section {
 section h2 {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  color: var(--dark-green);
+  color: var(--green8);
   margin-bottom: 25px;
 }
 
@@ -185,7 +184,7 @@ section h2 {
   padding: 15px;
   border-radius: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid var(--green9);
 }
 
 .product-card img {
@@ -204,8 +203,8 @@ section h2 {
 
 .qty-controls button {
   padding: 6px 10px;
-  background: var(--dark-green);
-  color: var(--cream);
+  background: var(--green7);
+  color: var(--green2);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -223,6 +222,7 @@ section h2 {
   grid-template-columns: 300px 1fr;
   gap: 30px;
   align-items: center;
+  color: var(--green8);
 }
 
 .story img {
@@ -234,6 +234,7 @@ section h2 {
 .about {
   text-align: center;
   font-size: 1.1rem;
+  color: var(--green8);
 }
 
 /* PARTNERS */
@@ -248,13 +249,14 @@ section h2 {
   background: white;
   padding: 10px 20px;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  color: var(--green8);
+  border: 1px solid var(--green9);
 }
 
 /* FOOTER */
 footer {
-  background: var(--dark-green);
-  color: white;
+  background: var(--green6);
+  color: var(--green2);
   text-align: center;
   padding: 25px;
   margin-top: 40px;
@@ -276,7 +278,7 @@ footer {
 <header>
   <div class="header-left">
     <img src="logo.png" class="logo-img">
-    <div class="site-title">Drive Safe Tucson</div>
+    <div class="site-title">Dorothy's Dream</div>
   </div>
   <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
 </header>
@@ -285,7 +287,7 @@ footer {
 <section class="hero-split">
   <div>
     <p class="hero-tagline">Dorothy’s Dream</p>
-    <h1>Be <em>kind</em> behind the wheel.</h1>
+    <h1>Be <em>mindful</em> behind the wheel.</h1>
     <p>Driving with awareness protects our neighbors, families, and pets.</p>
     <a href="pledge.html" class="btn primary">Take the Pledge</a>
   </div>
