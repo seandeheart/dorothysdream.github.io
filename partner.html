@@ -9,17 +9,15 @@
 
 <style>
 :root {
-  --cream: #f4efe6;
-  --sage: #4d5b3c;
-  --olive: #74895b;
-  --green: #428537;
-  --dark-green: #336529;
-  --tan: #d8c3a5;
-  --mesquite: #5e4725;
-  --copperwood: #6e5024;
-  --desert-amber: #a27d46;
-  --sandstone: #957649;
-  --driftwood: #826e51;
+  --green1: #E8F1EC;
+  --green2: #C9DED0;
+  --green3: #A9CBB4;
+  --green4: #88B897;
+  --green5: #669975;
+  --green6: #557F61;
+  --green7: #44654D;
+  --green8: #334B39;
+  --green9: #223124;
 }
 
 /* FIX BOX MODEL */
@@ -30,14 +28,14 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--cream);
-  color: var(--mesquite);
+  background: var(#fff);
+  color: #222;
 }
 
 /* HEADER */
 header {
-  background: var(--tan);
-  border-bottom: 1px solid var(--sandstone);
+  background: var(--green6);
+  border-bottom: 1px solid var(--green9);
   text-align: center;
   padding: 35px 20px;
 }
@@ -46,7 +44,7 @@ header h2 {
   margin: 0;
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  color: var(--dark-green);
+  color: var(--green2);
 }
 
 /* CENTER SECTION */
@@ -63,7 +61,7 @@ header h2 {
   background: white;
   padding: 45px 35px;
   border-radius: 14px;
-  border: 1px solid var(--sandstone);
+  border: 1px solid var(--green9);
   box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
@@ -71,7 +69,7 @@ header h2 {
 .container p {
   margin-top: 0;
   margin-bottom: 25px;
-  color: var(--driftwood);
+  color: var(--green8);
 }
 
 /* INPUTS */
@@ -81,7 +79,7 @@ textarea {
   padding: 14px 16px;
   margin-bottom: 18px;
   border-radius: 8px;
-  border: 1px solid var(--sandstone);
+  border: 1px solid var(--green8);
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   background: white;
@@ -91,7 +89,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--dark-green);
+  border-color: var(--green9);
 }
 
 /* BUTTON */
@@ -100,8 +98,8 @@ button {
   padding: 14px;
   border-radius: 8px;
   border: none;
-  background: var(--dark-green);
-  color: var(--cream);
+  background: var(--green6);
+  color: var(--green1);
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -109,14 +107,14 @@ button {
 }
 
 button:hover {
-  background: var(--sage);
+  background: var(--green4);
 }
 
 /* SUCCESS MESSAGE */
 .success {
   text-align: center;
   font-size: 18px;
-  color: var(--dark-green);
+  color: var(--green8);
 }
 </style>
 </head>
