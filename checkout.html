@@ -33,16 +33,26 @@ header {
   border-bottom: 1px solid var(--green9);
   padding: 0 20px;
   height: 70px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
 }
 
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
-  position: relative;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .logo-img {
@@ -56,23 +66,24 @@ header {
 .site-title {
   font-weight: 600;
   color: var(--green2);
-  font-size: 1.4rem;
+  font-size: 2rem;
   letter-spacing: 0.5px;
 }
 
 .tucson-btn {
-  background: var(--dark-green);
-  color: var(--cream);
-  padding: 8px 14px;
-  border-radius: 6px;
+  background: var(--green2);
+  color: var(--green9);
+  padding: 8px 16px;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 0.9rem;
   font-weight: 500;
+  font-size: 1.3rem;
   transition: 0.2s ease;
 }
 
 .tucson-btn:hover {
-  background: var(--sage);
+  background: var(--green4);
+  transform: translateY(-1px);
 }
 
 .cart {
@@ -295,9 +306,12 @@ footer {
     <img src="logo.png" class="logo-img">
     <div class="site-title">Dorothy's Dream</div>
   </div>
-  <div style="display:flex; align-items:center; gap:1400px;">
-  <a href="tucson.html" class="tucson-btn">Tucson</a>
-  <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
+  <div class="header-center">
+    <a href="tucson.html" class="tucson-btn">Tucson</a>
+  </div>
+  <div class="header-right">
+    <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
+  </div>
 </div>
 </header>
 
