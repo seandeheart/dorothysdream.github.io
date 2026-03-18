@@ -60,6 +60,21 @@ header {
   letter-spacing: 0.5px;
 }
 
+.tucson-btn {
+  background: var(--dark-green);
+  color: var(--cream);
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.tucson-btn:hover {
+  background: var(--sage);
+}
+
 .cart {
   cursor: pointer;
   font-size: 1.5rem;
@@ -280,7 +295,10 @@ footer {
     <img src="logo.png" class="logo-img">
     <div class="site-title">Dorothy's Dream</div>
   </div>
+  <div style="display:flex; align-items:center; gap:1400px;">
+  <a href="tucson.html" class="tucson-btn">Tucson</a>
   <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
+</div>
 </header>
 
 <!-- HERO -->
